@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>XX咖啡廳</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS 動畫 -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Serif TC', serif;
+      background-color: #f7f3ee;
+      color: #4a3f35;
+      scroll-behavior: smooth;
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Navbar */
+    .navbar {
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      background-color: #ffffff !important;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-link.active, .nav-link:hover {
+      color: #4a3f35 !important;
+      font-weight: bold;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-top: 60px;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #4a3f35;
+      color: #4a3f35;
+    }
+
+    .card {
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    footer {
+      background-color: #e8e1d4;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 60px;
+    }
+
+    /* Back to top */
+    #backToTop {
+      position: fixed;
+      bottom: 40px;
+      right: 30px;
+      display: none;
+      background-color: #4a3f35;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 10px 15px;
+      font-size: 20px;
+      z-index: 999;
+    }
+
+    /* 每區塊配色 */
+    #menu {
+      background-color: #f0e5da;
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    #about {
+      background-color: #fff8f2;
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    #contact {
+      background-color: #f7ede2;
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    #contact form {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    #contact button {
+      background-color: #4a3f35;
+      border: none;
+    }
+
+    #contact button:hover {
+      background-color: #6b5e51;
+    }
+
+    #map {
+      background-color: #ece6df;
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light fixed-top bg-transparent">
+  <div class="container">
+    <a class="navbar-brand" href="#">☕ XX時光</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#">首頁</a></li>
+        <li class="nav-item"><a class="nav-link" href="#menu">菜單</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">關於我們</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">聯絡</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="display-4" data-aos="fade-down">XX咖啡廳</h1>
+    <p class="lead" data-aos="fade-up">沉浸在咖啡香的每一刻</p>
+    <a href="#menu" class="btn btn-outline-light mt-3">探索菜單</a>
+  </div>
+</section>
+
+<!-- Menu -->
+<!-- 保留上方 <head> 與 <nav>、hero、about 等區塊不變，只顯示修改後的 #menu 區塊 -->
+
+<!-- Menu 區塊 -->
+<section id="menu">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">精選甜點</h2>
+        <div class="row g-4">
+        <!-- 黑森林蛋糕 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card h-100 shadow-sm">
+            <img src="file:///C:/Users/yingj/OneDrive/%E6%A1%8C%E9%9D%A2/netfinal/images/%E9%BB%91%E6%A3%AE%E6%9E%97%E8%9B%8B%E7%B3%95.jpg" class="card-img-top" alt="黑森林蛋糕">
+            <div class="card-body">
+              <h5 class="card-title">黑森林蛋糕</h5>
+              <p class="card-text">經典德式巧克力蛋糕，層層蛋糕夾入櫻桃與鮮奶油，甜而不膩。</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- 水果塔 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100 shadow-sm">
+            <img src="file:///C:/Users/yingj/OneDrive/%E6%A1%8C%E9%9D%A2/netfinal/images/%E6%B0%B4%E6%9E%9C%E5%A1%94.jpg" class="card-img-top" alt="水果塔">
+            <div class="card-body">
+              <h5 class="card-title">水果塔</h5>
+              <p class="card-text">酥脆塔皮搭配滿滿新鮮水果與卡士達醬，色彩繽紛、口感豐富。</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- 提拉米蘇 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="card h-100 shadow-sm">
+            <img src="file:///C:/Users/yingj/OneDrive/%E6%A1%8C%E9%9D%A2/netfinal/images/%E6%8F%90%E6%8B%89%E7%B1%B3%E8%98%87.jpg" class="card-img-top" alt="提拉米蘇">
+            <div class="card-body">
+              <h5 class="card-title">提拉米蘇</h5>
+              <p class="card-text">義式經典甜點，融合咖啡酒香與滑順馬斯卡彭起司，入口即化。</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- 抹茶千層 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="card h-100 shadow-sm">
+            <img src="file:///C:/Users/yingj/OneDrive/%E6%A1%8C%E9%9D%A2/netfinal/images/%E6%8A%B9%E8%8C%B6%E5%8D%83%E5%B1%A4.avif" class="card-img-top" alt="抹茶千層">
+            <div class="card-body">
+              <h5 class="card-title">抹茶千層</h5>
+              <p class="card-text">層層手工餅皮堆疊抹茶鮮奶油，濃郁茶香迷人回甘。</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- 馬卡龍 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+          <div class="card h-100 shadow-sm">
+            <img src="file:///C:/Users/yingj/OneDrive/%E6%A1%8C%E9%9D%A2/netfinal/images/%E9%A6%AC%E5%8D%A1%E9%BE%8D.jpeg" class="card-img-top" alt="馬卡龍">
+            <div class="card-body">
+              <h5 class="card-title">馬卡龍</h5>
+              <p class="card-text">法式經典甜點，外酥內軟，搭配各種繽紛口味，賞心悅目。</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- 可麗露 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+          <div class="card h-100 shadow-sm">
+            <img src="file:///C:/Users/yingj/OneDrive/%E6%A1%8C%E9%9D%A2/netfinal/images/%E5%8F%AF%E9%BA%97%E9%9C%B2.jpg" class="card-img-top" alt="可麗露">
+            <div class="card-body">
+              <h5 class="card-title">可麗露</h5>
+              <p class="card-text">來自法國波爾多的小點心，外皮焦脆、內餡Q彈濕潤，帶有香草與蘭姆酒香。</p>
+            </div>
+          </div>
+        </div>
+        
+        <h2 class="section-title" data-aos="fade-up">精選飲品</h2>
+
+       <!-- 美式咖啡 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card h-100 shadow-sm">
+            <img src="images/美式咖啡.jpg" class="card-img-top" alt="美式咖啡">
+            <div class="card-body">
+              <h5 class="card-title">美式咖啡</h5>
+              <p class="card-text">口感清爽順口，保留咖啡原始風味的經典選擇。</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 拿鐵 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100 shadow-sm">
+            <img src="images/拿鐵.jpg" class="card-img-top" alt="拿鐵">
+            <div class="card-body">
+              <h5 class="card-title">拿鐵</h5>
+              <p class="card-text">濃縮咖啡加上大量蒸奶，口感溫潤柔順，最受歡迎的選項之一。</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 卡布奇諾 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="card h-100 shadow-sm">
+            <img src="images/卡布奇諾.webp" class="card-img-top" alt="卡布奇諾">
+            <div class="card-body">
+              <h5 class="card-title">卡布奇諾</h5>
+              <p class="card-text">等比例的濃縮、牛奶與奶泡，香濃滑順、層次分明。</p>
+            </div>
+          </div>
+        </div>
+       
+        <!-- 摩卡 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="card h-100 shadow-sm">
+            <img src="images/摩卡.jpg" class="card-img-top" alt="摩卡">
+            <div class="card-body">
+              <h5 class="card-title">摩卡</h5>
+              <p class="card-text">巧克力與濃縮咖啡的完美結合，香甜中帶著咖啡的濃郁。</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 焦糖瑪奇朵 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+          <div class="card h-100 shadow-sm">
+            <img src="images/焦糖瑪奇朵.jpg" class="card-img-top" alt="焦糖瑪奇朵">
+            <div class="card-body">
+              <h5 class="card-title">焦糖瑪奇朵</h5>
+              <p class="card-text">香濃奶香加上焦糖風味，甜而不膩，外觀層次感十足。</p>
+            </div>
+          </div>
+        </div>
+        
+        <!--濃縮咖啡 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+          <div class="card h-100 shadow-sm">
+            <img src="images/濃縮咖啡.jpg" class="card-img-top" alt="濃縮咖啡">
+            <div class="card-body">
+              <h5 class="card-title">濃縮咖啡</h5>
+              <p class="card-text">小巧一杯、風味強烈，是咖啡控的每日儀式。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+<!-- About -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">關於我們</h2>
+    <p class="text-center px-3" data-aos="fade-up" data-aos-delay="100">
+      在城市的一隅，有間悄悄開張的小咖啡廳。
+據說，這裡原是一位老爺爺的書房，他總愛泡一杯手沖咖啡，坐在窗邊看著午後的陽光灑進木地板的縫隙。後來，他將這裡留給了孫女——一位愛旅行、愛甜點、也愛記憶的人。
+
+她保留了那張書桌，換上了咖啡機與烘豆器，將旅途中遇見的風味與靈感帶回這個空間。牆上貼著她從京都買來的抹茶千層食譜，冰箱裡有她在巴黎學會做的馬卡龍。每一道甜點、每一杯咖啡，都藏著一段故事，只待你來品味。
+
+這裡沒有喧鬧，也沒有匆忙。
+有的是一張舒服的椅子、一首輕柔的爵士樂，以及一杯剛剛好的溫熱咖啡。
+
+歡迎來到我們的咖啡廳——一個可以短暫逃離世界、找回自己味蕾與心情的小角落。
+    </p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">聯絡我們</h2>
+    <form class="row g-3" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-md-6">
+        <label for="name" class="form-label">姓名</label>
+        <input type="text" class="form-control" id="name" placeholder="請輸入姓名">
+      </div>
+      <div class="col-md-6">
+        <label for="email" class="form-label">電子信箱</label>
+        <input type="email" class="form-control" id="email" placeholder="請輸入Email">
+      </div>
+      <div class="col-12">
+        <label for="message" class="form-label">訊息</label>
+        <textarea class="form-control" id="message" rows="4" placeholder="留言內容..."></textarea>
+      </div>
+      <div class="col-12 text-end">
+        <button type="submit" class="btn btn-primary">送出</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 XX咖啡廳. All Rights Reserved.</p>
+</footer>
+
+<!-- Back to top -->
+<button id="backToTop" title="回到頂部">↑</button>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  // 捲動 navbar 變色
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('mainNavbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+
+    // 回到頂部按鈕顯示
+    const btn = document.getElementById('backToTop');
+    if (window.scrollY > 300) {
+      btn.style.display = 'block';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+
+  // 點擊回到頂部
+  document.getElementById('backToTop').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
